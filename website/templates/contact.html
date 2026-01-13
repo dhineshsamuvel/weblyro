@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Contact Weblyro Tech – Start Your Project{% endblock %}
+{% block body_class %}contact{% endblock %}
+
+{% block content %}
+
+<!-- ===============================
+     HERO
+================================ -->
+
+<section class="section center contact-hero">
+  <h1>Let’s Build Something Great</h1>
+  <p class="section-subtitle">
+    Tell us about your business and your project. Our team will contact you within 24 hours with the next steps.
+  </p>
+
+  {% if error %}
+    <p style="color:#f87171; margin-top:10px;">{{ error }}</p>
+  {% endif %}
+</section>
+
+<!-- ===============================
+     MAIN CONTENT
+================================ -->
+
+<section class="section contact-page">
+  <div class="grid">
+
+    <!-- ===============================
+         CONTACT FORM
+    ================================ -->
+
+    <div class="card">
+      <h3>Send Us a Message</h3>
+      <p class="small-text">
+        Fill out the form below and one of our specialists will get back to you shortly.
+      </p>
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="{{ form.name.id_for_label }}">Full Name</label>
+          {{ form.name }}  <!-- Render the name field -->
+          {% if form.name.errors %}
+            <p class="error">{{ form.name.errors }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.email.id_for_label }}">Email Address</label>
+          {{ form.email }}  <!-- Render the email field -->
+          {% if form.email.errors %}
+            <p class="error">{{ form.email.errors }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.phone.id_for_label }}">Phone Number</label>
+          {{ form.phone }}  <!-- Render the phone field -->
+          {% if form.phone.errors %}
+            <p class="error">{{ form.phone.errors }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.message.id_for_label }}">Project Details</label>
+          {{ form.message }}  <!-- Render the message field -->
+          {% if form.message.errors %}
+            <p class="error">{{ form.message.errors }}</p>
+          {% endif %}
+        </div>
+
+        <button class="btn primary" type="submit">
+          Submit Request
+        </button>
+      </form>
+    </div>
+
+    <!-- ===============================
+         DIRECT CONTACT (UPDATED)
+    ================================ -->
+
+    <div class="card">
+      <h3>Prefer to Contact Us Directly?</h3>
+      <p class="small-text">
+        Reach our team instantly using one of the options below.
+      </p>
+
+      <div class="nav-actions" style="margin-top:16px">
+
+        <a href="mailto:weblyrotech@gmail.com" class="btn email">
+          ✉ weblyrotech@gmail.com
+        </a>
+
+        <a
+          href="https://wa.me/918976008966?text=Hello%20Weblyro%20Tech%2C%20I%20need%20a%20website"
+          class="btn secondary"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp Chat
+        </a>
+
+        <a
+          href="https://calendly.com/Weblyro-tech/consultation"
+          class="btn primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Free Consultation Call
+        </a>
+
+      </div>
+
+      <hr style="margin:24px 0; border-color:rgba(255,255,255,.12)">
+
+      <p class="small-text">
+        Weblyro Tech provides custom websites, Shopify stores, WordPress solutions, SEO, and long-term technical support for growing businesses.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block title %}Get a Custom Quote – Weblyro Tech{% endblock %}
+{% block body_class %}quote{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="section center quote-hero">
+  <h1>Get a Custom Quote for Your Project</h1>
+  <p class="section-subtitle">
+    Tell us about your business and what you want to build. Our experts will review your requirements and send you a detailed proposal with pricing, timeline, and recommendations within 24 hours.
+  </p>
+
+  {% if error %}
+    <p style="color:#f87171; margin-top:10px;">{{ error }}</p>
+  {% endif %}
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section quote-page">
+  <div class="grid">
+
+    <!-- QUOTE FORM -->
+    <div class="card">
+      <h3>Start Your Project</h3>
+      <p class="small-text">
+        Provide your details below so we can understand your goals and design the best solution for your business.
+      </p>
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="{{ form.name.id_for_label }}">Full Name</label>
+          {{ form.name }}  <!-- Render the name field -->
+          {% if form.name.errors %}
+            <p class="error">{{ form.name.errors }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.email.id_for_label }}">Email Address</label>
+          {{ form.email }}  <!-- Render the email field -->
+          {% if form.email.errors %}
+            <p class="error">{{ form.email.errors }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.phone.id_for_label }}">Phone Number</label>
+          {{ form.phone }}  <!-- Render the phone field -->
+          {% if form.phone.errors %}
+            <p class="error">{{ form.phone.errors }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.company.id_for_label }}">Company Name</label>
+          {{ form.company }}  <!-- Render the company field -->
+          {% if form.company.errors %}
+            <p class="error">{{ form.company.errors }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.service.id_for_label }}">Service Required</label>
+          {{ form.service }}  <!-- Render the service dropdown -->
+          {% if form.service.errors %}
+            <p class="error">{{ form.service.errors }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.message.id_for_label }}">Project Description</label>
+          {{ form.message }}  <!-- Render the message field -->
+          {% if form.message.errors %}
+            <p class="error">{{ form.message.errors }}</p>
+          {% endif %}
+        </div>
+
+        <button class="btn primary">Get My Free Quote</button>
+      </form>
+    </div>
+
+    <!-- DIRECT CONTACT -->
+    <div class="card">
+      <h3>Need a Faster Response?</h3>
+      <p class="small-text">
+        If you prefer immediate assistance, our team is available through the channels below.
+      </p>
+
+      <p><strong>Email</strong><br>
+        <a href="mailto:weblyrotech@gmail.com">weblyrotech@gmail.com</a>
+      </p>
+
+      <p><strong>WhatsApp</strong><br>
+        <a href="https://wa.me/918976008966?text=Hello%20Weblyro%20Tech%2C%20I%20need%20a%20website">
+          Start WhatsApp Chat
+        </a>
+      </p>
+
+      <p><strong>Free Consultation Call</strong><br>
+        <a href="https://calendly.com/Weblyro-tech/consultation">
+          Schedule a Call
+        </a>
+      </p>
+
+      <hr>
+
+      <p class="small-text">
+        Weblyro Tech helps businesses grow online through high-performance websites, eCommerce platforms, SEO, and long-term technical support.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

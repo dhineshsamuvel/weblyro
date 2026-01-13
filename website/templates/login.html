@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Admin Login – Weblyro Tech{% endblock %}
+{% block body_class %}login{% endblock %}
+
+{% block content %}
+
+<section class="section center">
+  <h1>Admin Login</h1>
+  <p class="section-subtitle">
+    Secure access for Weblyro Tech administrators.
+  </p>
+</section>
+
+<section class="section">
+  <div class="grid" style="max-width:600px; margin:0 auto;">
+    <div class="card">
+
+      <h3>Sign In</h3>
+      <p class="small-text">
+        Enter your credentials to access the admin dashboard.
+      </p>
+
+      <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button class="btn primary" style="width:100%; margin-top:15px;">
+          Login
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

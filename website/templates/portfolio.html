@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Portfolio – Weblyro Tech{% endblock %}
+{% block body_class %}portfolio{% endblock %}
+
+{% block content %}
+
+<section class="section center">
+  <h1>Our Work</h1>
+  <p class="section-subtitle">
+    A selection of projects we’ve delivered for businesses across different industries.
+    Each project is built with performance, usability, and long-term growth in mind.
+
+    From custom business websites to eCommerce platforms, our portfolio highlights how
+    we turn ideas into reliable, scalable digital products. Every project reflects our
+    focus on clean design, strong foundations, and measurable results.
+  </p>
+</section>
+
+
+<section class="section">
+  <div class="grid portfolio-grid">
+
+    {% for project in projects %}
+      <article class="card portfolio-card">
+
+        {% if project.image %}
+          <img
+            src="{{ project.image.url }}"
+            alt="{{ project.title }}"
+            class="portfolio-image"
+          >
+        {% else %}
+          <div class="portfolio-placeholder">
+            <span>No preview available</span>
+          </div>
+        {% endif %}
+
+        <h3>{{ project.title }}</h3>
+        <p class="small-text">{{ project.services }}</p>
+
+        {% if project.website_url %}
+          <a href="{{ project.website_url }}"
+             target="_blank"
+             rel="noopener"
+             class="btn secondary">
+            Visit Website
+          </a>
+        {% endif %}
+
+      </article>
+    {% empty %}
+      <p class="small-text">Projects will be added here soon.</p>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% endblock %}

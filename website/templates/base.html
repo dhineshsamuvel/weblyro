@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %}Weblyro Tech — High-Performing Websites{% endblock %}</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Weblyro Tech is a web development agency building fast, SEO-ready websites using Shopify, WordPress, and custom development.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Weblyro Tech — Web Development Agency">
+  <meta property="og:description" content="High-performing websites for brands that want results.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Weblyro Tech">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Google reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdfJ0gsAAAAAEVVl0gofFeoYfETEiF80yGUBUHU"></script>
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+<!-- ===============================
+     HEADER / NAVBAR
+================================ -->
+
+<header class="site-header">
+  <nav>
+    <div class="nav-container">
+
+      <!-- LOGO -->
+      <a href="/" class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="Weblyro Tech logo">
+        <span>Weblyro Tech</span>
+      </a>
+
+      <!-- NAV LINKS -->
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+<!-- ===============================
+     MAIN CONTENT
+================================ -->
+
+<main id="content">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ===============================
+     FOOTER
+================================ -->
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
+      <!-- BRAND -->
+      <div class="footer-col">
+        <h4>Weblyro Tech</h4>
+        <p>
+          We design and develop fast, conversion-focused websites for startups,
+          creators, and growing brands using Shopify, WordPress, and custom development.
+        </p>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/portfolio/">Our Work</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/#custom">Custom Websites</a></li>
+          <li><a href="/services/#shopify">Shopify Stores</a></li>
+          <li><a href="/services/#wordpress">WordPress Websites</a></li>
+          <li><a href="/services/#maintenance">Maintenance & Support</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="footer-col footer-cta">
+        <h4>Start Your Project</h4>
+
+        <div class="cta-group" style="justify-content:flex-start; margin-top:16px;">
+          <a href="/get-quote/" class="btn primary">Build My Website</a>
+          <a href="/contact/" class="btn secondary">Talk to Us</a>
+
+          <a href="mailto:weblyrotech@gmail.com" class="btn email-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+            weblyrotech@gmail.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Weblyro Tech. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===============================
+     FLOATING WHATSAPP
+================================ -->
+
+<a href="https://wa.me/918976008966?text=Hi%20Weblyro%20Tech%20I%20want%20a%20website"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener">
+  WhatsApp
+</a>
+
+<!-- ===============================
+     reCAPTCHA TOKEN INJECTION
+================================ -->
+
+<script>
+grecaptcha.ready(function () {
+  grecaptcha.execute('6LdfJ0gsAAAAAEVVl0gofFeoYfETEiF80yGUBUHU', { action: 'submit' })
+    .then(function (token) {
+      document.querySelectorAll("form").forEach(function (form) {
+        let input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "g-recaptcha-response";
+        input.value = token;
+        form.appendChild(input);
+      });
+    });
+});
+</script>
+
+</body>
+</html>
