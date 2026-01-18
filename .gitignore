@@ -1,6 +1,11 @@
 # Environment & secrets
 .env
 
+# Django cache
+tmp/
+*.djcache
+
+
 # Python
 __pycache__/
 *.pyc

@@ -7,7 +7,6 @@ from website import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # Main pages
     path('', views.home, name="home"),
     path('services/', views.services, name="services"),
     path('portfolio/', views.portfolio, name="portfolio"),
@@ -16,7 +15,6 @@ urlpatterns = [
     path('get-quote/', views.get_quote, name="get_quote"),
     path('thank-you/', views.thank_you, name="thank_you"),
 
-    # Service pages
     path('services/website-design/', views.website_design, name="website_design"),
     path('services/shopify/', views.shopify, name="shopify"),
     path('services/wordpress/', views.wordpress, name="wordpress"),
@@ -25,7 +23,5 @@ urlpatterns = [
     path('services/maintenance/', views.maintenance, name="maintenance"),
 ]
 
-# Serve static & media files in development
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
