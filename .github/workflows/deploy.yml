@@ -1,0 +1,31 @@
+name: Auto Deploy to OCI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to web
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: 10.0.1.122
+        username: ubuntu
+        key: ${{ secrets.DEPLOY_SSH_KEY }}
+        script: |
+          cd /srv/django/weblyro
+          ./deploy.sh
+
+    - name: Deploy to web2
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: 10.0.1.27
+        username: ubuntu
+        key: ${{ secrets.DEPLOY_SSH_KEY }}
+        script: |
+          cd /srv/django/weblyro
+          ./deploy.sh
