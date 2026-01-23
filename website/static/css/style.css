@@ -323,7 +323,6 @@ p {
 .footer-bottom {
   text-align: center;
   margin-top: 28px;
-  border-top: 1px solid rgba(255,255,255,.18);
   padding-top: 16px;
 }
 
@@ -391,6 +390,37 @@ p {
 }
 
 /* ======================================================
+   HIDE RECAPTCHA (GLOBAL)
+====================================================== */
+
+.grecaptcha-badge,
+.g-recaptcha iframe {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* ======================================================
+   REMOVE VISITED LINK COLOR
+====================================================== */
+
+a:visited {
+  color: inherit;
+}
+
+/* ======================================================
+   MAKE ALL GMAIL LINKS MATCH FOOTER STYLE
+====================================================== */
+
+a[href^="mailto"] {
+  font-size: 14px;
+  color: #cbd5e1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ======================================================
    RESPONSIVE
 ====================================================== */
 
@@ -419,5 +449,33 @@ p {
 
   .cta-group {
     gap: 14px;
+  }
+
+  .section {
+    padding: 40px 14px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    min-width: 160px;
+  }
+
+  .footer {
+    padding: 40px 16px 24px;
+    margin-top: 48px;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 12px;
+  }
+
+  .whatsapp-float {
+    padding: 10px 14px;
+    font-size: 14px;
   }
 }
