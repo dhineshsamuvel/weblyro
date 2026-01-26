@@ -28,8 +28,8 @@ class Lead(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="New")
 
     class Meta:
-        verbose_name = "Inquiry"
-        verbose_name_plural = "Inquiries"
+        verbose_name = "Lead"
+        verbose_name_plural = "Leads"
         ordering = ["-created_at"]
 
     def __str__(self):

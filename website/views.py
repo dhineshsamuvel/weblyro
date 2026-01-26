@@ -176,13 +176,3 @@ Message:
         form = LeadForm()  # Create an empty form for GET request
 
     return render(request, "get_quote.html", {"form": form})
-
-def cms_content(request):
-    content = {}
-
-    for item in CMSContent.objects.all():
-        content[item.key] = item.value
-
-    return {
-        "content": content
-    }

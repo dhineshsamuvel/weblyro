@@ -5,9 +5,16 @@ from .models import Lead, Project, CMSContent
 @admin.register(Lead)
 class LeadAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone", "service", "status", "created_at")
-    list_filter = ("service", "status", "created_at")
-    search_fields = ("name", "email", "phone", "company", "message")
+
+    # safe filters
+    list_filter = ("service", "status")
+
+    # remove TextField (message) from search to avoid admin hang
+    search_fields = ("name", "email", "phone", "company")
+
+    # editable field must NOT be in list_display before non-editable fields
     list_editable = ("status",)
+
     list_per_page = 25
     ordering = ("-created_at",)
 
@@ -23,5 +30,5 @@ class ProjectAdmin(admin.ModelAdmin):
 class CMSContentAdmin(admin.ModelAdmin):
     list_display = ("page", "key", "value")
     list_filter = ("page",)
-    search_fields = ("key", "value")
+    search_fields = ("key",)
     list_per_page = 50
