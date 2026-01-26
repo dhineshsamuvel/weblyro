@@ -4,11 +4,12 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <section class="section center services-hero">
-  <h1>Professional Web Services</h1>
+  <h1>{{ c.hero_title|default:"Professional Web Services" }}</h1>
   <p class="section-subtitle">
-    We design, build, and optimize high-performing websites that help
-    businesses grow, convert more customers, and scale confidently.
+    {{ c.hero_subtitle|default:"We design, build, and optimize high-performing websites that help businesses grow, convert more customers, and scale confidently." }}
   </p>
 </section>
 
@@ -17,90 +18,84 @@
 
     <a href="/services/website-design/" class="service-link">
       <article class="card service-card">
-        <h3>Custom Website Design & Development</h3>
+        <h3>{{ c.service_1_title|default:"Custom Website Design & Development" }}</h3>
         <p>
-          Fully custom websites built from the ground up to reflect your brand,
-          engage users, and deliver measurable business results.
+          {{ c.service_1_desc|default:"Fully custom websites built from the ground up to reflect your brand, engage users, and deliver measurable business results." }}
         </p>
         <ul class="service-points">
-          <li>Modern UI/UX</li>
-          <li>Fast & responsive</li>
-          <li>SEO-ready structure</li>
+          <li>{{ c.service_1_point_1|default:"Modern UI/UX" }}</li>
+          <li>{{ c.service_1_point_2|default:"Fast & responsive" }}</li>
+          <li>{{ c.service_1_point_3|default:"SEO-ready structure" }}</li>
         </ul>
       </article>
     </a>
 
     <a href="/services/shopify/" class="service-link">
       <article class="card service-card">
-        <h3>Shopify Store Development</h3>
+        <h3>{{ c.service_2_title|default:"Shopify Store Development" }}</h3>
         <p>
-          Conversion-optimized Shopify stores designed to sell more,
-          load faster, and provide a seamless shopping experience.
+          {{ c.service_2_desc|default:"Conversion-optimized Shopify stores designed to sell more, load faster, and provide a seamless shopping experience." }}
         </p>
         <ul class="service-points">
-          <li>Custom theme setup</li>
-          <li>Payment & shipping integration</li>
-          <li>Mobile-first design</li>
+          <li>{{ c.service_2_point_1|default:"Custom theme setup" }}</li>
+          <li>{{ c.service_2_point_2|default:"Payment & shipping integration" }}</li>
+          <li>{{ c.service_2_point_3|default:"Mobile-first design" }}</li>
         </ul>
       </article>
     </a>
 
     <a href="/services/wordpress/" class="service-link">
       <article class="card service-card">
-        <h3>WordPress Website Development</h3>
+        <h3>{{ c.service_3_title|default:"WordPress Website Development" }}</h3>
         <p>
-          Scalable and easy-to-manage WordPress websites built with
-          security, speed, and long-term growth in mind.
+          {{ c.service_3_desc|default:"Scalable and easy-to-manage WordPress websites built with security, speed, and long-term growth in mind." }}
         </p>
         <ul class="service-points">
-          <li>Custom themes</li>
-          <li>SEO & performance optimized</li>
-          <li>Admin-friendly setup</li>
+          <li>{{ c.service_3_point_1|default:"Custom themes" }}</li>
+          <li>{{ c.service_3_point_2|default:"SEO & performance optimized" }}</li>
+          <li>{{ c.service_3_point_3|default:"Admin-friendly setup" }}</li>
         </ul>
       </article>
     </a>
 
     <a href="/services/redesign/" class="service-link">
       <article class="card service-card">
-        <h3>Website Redesign & Revamp</h3>
+        <h3>{{ c.service_4_title|default:"Website Redesign & Revamp" }}</h3>
         <p>
-          Transform outdated websites into modern, high-converting
-          platforms without losing your existing content or SEO value.
+          {{ c.service_4_desc|default:"Transform outdated websites into modern, high-converting platforms without losing your existing content or SEO value." }}
         </p>
         <ul class="service-points">
-          <li>UI/UX improvements</li>
-          <li>Performance upgrades</li>
-          <li>Conversion optimization</li>
+          <li>{{ c.service_4_point_1|default:"UI/UX improvements" }}</li>
+          <li>{{ c.service_4_point_2|default:"Performance upgrades" }}</li>
+          <li>{{ c.service_4_point_3|default:"Conversion optimization" }}</li>
         </ul>
       </article>
     </a>
 
     <a href="/services/speed/" class="service-link">
       <article class="card service-card">
-        <h3>Website Speed Optimization</h3>
+        <h3>{{ c.service_5_title|default:"Website Speed Optimization" }}</h3>
         <p>
-          Improve load times, Core Web Vitals, and overall performance
-          to deliver a better user experience and SEO rankings.
+          {{ c.service_5_desc|default:"Improve load times, Core Web Vitals, and overall performance to deliver a better user experience and SEO rankings." }}
         </p>
         <ul class="service-points">
-          <li>Core Web Vitals fixes</li>
-          <li>Image & asset optimization</li>
-          <li>Server & frontend tuning</li>
+          <li>{{ c.service_5_point_1|default:"Core Web Vitals fixes" }}</li>
+          <li>{{ c.service_5_point_2|default:"Image & asset optimization" }}</li>
+          <li>{{ c.service_5_point_3|default:"Server & frontend tuning" }}</li>
         </ul>
       </article>
     </a>
 
     <a href="/services/maintenance/" class="service-link">
       <article class="card service-card">
-        <h3>Website Maintenance & Support</h3>
+        <h3>{{ c.service_6_title|default:"Website Maintenance & Support" }}</h3>
         <p>
-          Reliable ongoing support to keep your website secure,
-          updated, and running smoothly at all times.
+          {{ c.service_6_desc|default:"Reliable ongoing support to keep your website secure, updated, and running smoothly at all times." }}
         </p>
         <ul class="service-points">
-          <li>Regular updates & backups</li>
-          <li>Security monitoring</li>
-          <li>Priority technical support</li>
+          <li>{{ c.service_6_point_1|default:"Regular updates & backups" }}</li>
+          <li>{{ c.service_6_point_2|default:"Security monitoring" }}</li>
+          <li>{{ c.service_6_point_3|default:"Priority technical support" }}</li>
         </ul>
       </article>
     </a>
@@ -109,20 +104,23 @@
 </section>
 
 <section class="section center services-cta">
-  <h2>Need Help Choosing the Right Service?</h2>
+  <h2>{{ c.final_title|default:"Need Help Choosing the Right Service?" }}</h2>
   <p class="section-subtitle">
-    Tell us about your project and we’ll recommend the best solution
-    for your business—no obligation.
+    {{ c.final_subtitle|default:"Tell us about your project and we’ll recommend the best solution for your business—no obligation." }}
   </p>
   <div class="cta">
-    <a href="/get-quote/" class="btn primary">Get My Website</a>
+    <a href="/get-quote/" class="btn primary">
+      {{ c.final_cta_primary|default:"Get My Website" }}
+    </a>
     <a href="https://wa.me/918976008966?text=Hi%20Weblyro%20Tech%20I%20need%20a%20website"
        class="btn secondary"
        target="_blank"
        rel="noopener">
-      WhatsApp Us
+      {{ c.final_cta_secondary|default:"WhatsApp Us" }}
     </a>
   </div>
 </section>
+
+{% endwith %}
 
 {% endblock %}

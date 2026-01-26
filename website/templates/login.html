@@ -4,10 +4,12 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <section class="section center">
-  <h1>Admin Login</h1>
+  <h1>{{ c.hero_title|default:"Admin Login" }}</h1>
   <p class="section-subtitle">
-    Secure access for Weblyro Tech administrators.
+    {{ c.hero_subtitle|default:"Secure access for Weblyro Tech administrators." }}
   </p>
 </section>
 
@@ -15,9 +17,9 @@
   <div class="grid" style="max-width:600px; margin:0 auto;">
     <div class="card">
 
-      <h3>Sign In</h3>
+      <h3>{{ c.form_title|default:"Sign In" }}</h3>
       <p class="small-text">
-        Enter your credentials to access the admin dashboard.
+        {{ c.form_subtitle|default:"Enter your credentials to access the admin dashboard." }}
       </p>
 
       <form method="post">
@@ -26,12 +28,14 @@
         {{ form.as_p }}
 
         <button class="btn primary" style="width:100%; margin-top:15px;">
-          Login
+          {{ c.submit_cta|default:"Login" }}
         </button>
       </form>
 
     </div>
   </div>
 </section>
+
+{% endwith %}
 
 {% endblock %}

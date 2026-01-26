@@ -4,15 +4,14 @@
 
 {% block content %}
 
-<section class="section center">
-  <h1>Our Work</h1>
-  <p class="section-subtitle">
-    A selection of projects we’ve delivered for businesses across different industries.
-    Each project is built with performance, usability, and long-term growth in mind.
+{% with c=content %}
 
-    From custom business websites to eCommerce platforms, our portfolio highlights how
-    we turn ideas into reliable, scalable digital products. Every project reflects our
-    focus on clean design, strong foundations, and measurable results.
+<section class="section center">
+  <h1>{{ c.hero_title|default:"Our Work" }}</h1>
+  <p class="section-subtitle">
+    {{ c.hero_subtitle|default:"A selection of projects we’ve delivered for businesses across different industries. Each project is built with performance, usability, and long-term growth in mind.
+
+From custom business websites to eCommerce platforms, our portfolio highlights how we turn ideas into reliable, scalable digital products. Every project reflects our focus on clean design, strong foundations, and measurable results." }}
   </p>
 </section>
 
@@ -31,7 +30,7 @@
           >
         {% else %}
           <div class="portfolio-placeholder">
-            <span>No preview available</span>
+            <span>{{ c.no_preview|default:"No preview available" }}</span>
           </div>
         {% endif %}
 
@@ -43,16 +42,20 @@
              target="_blank"
              rel="noopener"
              class="btn secondary">
-            Visit Website
+            {{ c.visit_cta|default:"Visit Website" }}
           </a>
         {% endif %}
 
       </article>
     {% empty %}
-      <p class="small-text">Projects will be added here soon.</p>
+      <p class="small-text">
+        {{ c.empty_text|default:"Projects will be added here soon." }}
+      </p>
     {% endfor %}
 
   </div>
 </section>
+
+{% endwith %}
 
 {% endblock %}

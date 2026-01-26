@@ -7,6 +7,7 @@ import requests
 from django.contrib import messages  # To show flash messages
 from django.views.decorators.cache import cache_page  # Import cache_page decorator
 from django.http import HttpResponse
+from .models import CMSContent
 
 def health(request):
     return HttpResponse("OK", status=200)
@@ -175,3 +176,13 @@ Message:
         form = LeadForm()  # Create an empty form for GET request
 
     return render(request, "get_quote.html", {"form": form})
+
+def cms_content(request):
+    content = {}
+
+    for item in CMSContent.objects.all():
+        content[item.key] = item.value
+
+    return {
+        "content": content
+    }

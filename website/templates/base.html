@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{% block title %}Weblyro Tech — High-Performing Websites{% endblock %}</title>
+  <title>{% block title %}{{ content.site_title|default:"Weblyro Tech — High-Performing Websites" }}{% endblock %}</title>
 
   <!-- SEO -->
-  <meta name="description" content="Weblyro Tech is a web development agency building fast, SEO-ready websites using Shopify, WordPress, and custom development.">
+  <meta name="description" content="{{ content.meta_description|default:"Weblyro Tech is a web development agency building fast, SEO-ready websites using Shopify, WordPress, and custom development." }}">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Weblyro Tech — Web Development Agency">
-  <meta property="og:description" content="High-performing websites for brands that want results.">
+  <meta property="og:title" content="{{ content.og_title|default:"Weblyro Tech — Web Development Agency" }}">
+  <meta property="og:description" content="{{ content.og_description|default:"High-performing websites for brands that want results." }}">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Weblyro Tech">
+  <meta property="og:site_name" content="{{ content.site_name|default:"Weblyro Tech" }}">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,17 +41,17 @@
 
       <!-- LOGO -->
       <a href="/" class="logo">
-        <img src="{% static 'images/logo.png' %}" alt="Weblyro Tech logo">
-        <span>Weblyro Tech</span>
+        <img src="{% static 'images/logo.png' %}" alt="{{ content.logo_alt|default:"Weblyro Tech logo" }}">
+        <span>{{ content.site_name|default:"Weblyro Tech" }}</span>
       </a>
 
       <!-- NAV LINKS -->
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/">{{ content.nav_home|default:"Home" }}</a></li>
+        <li><a href="/services/">{{ content.nav_services|default:"Services" }}</a></li>
+        <li><a href="/portfolio/">{{ content.nav_portfolio|default:"Portfolio" }}</a></li>
+        <li><a href="/about/">{{ content.nav_about|default:"About" }}</a></li>
+        <li><a href="/contact/">{{ content.nav_contact|default:"Contact" }}</a></li>
       </ul>
 
     </div>
@@ -77,45 +77,48 @@
 
       <!-- BRAND -->
       <div class="footer-col">
-        <h4>Weblyro Tech</h4>
+        <h4>{{ content.footer_brand_title|default:"Weblyro Tech" }}</h4>
         <p>
-          We design and develop fast, conversion-focused websites for startups,
-          creators, and growing brands using Shopify, WordPress, and custom development.
+          {{ content.footer_brand_text|default:"We design and develop fast, conversion-focused websites for startups, creators, and growing brands using Shopify, WordPress, and custom development." }}
         </p>
       </div>
 
       <!-- COMPANY -->
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>{{ content.footer_company_title|default:"Company" }}</h4>
         <ul>
-          <li><a href="/about/">About Us</a></li>
-          <li><a href="/portfolio/">Our Work</a></li>
-          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/about/">{{ content.footer_about|default:"About Us" }}</a></li>
+          <li><a href="/portfolio/">{{ content.footer_work|default:"Our Work" }}</a></li>
+          <li><a href="/contact/">{{ content.footer_contact|default:"Contact" }}</a></li>
         </ul>
       </div>
 
       <!-- SERVICES -->
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4>{{ content.footer_services_title|default:"Services" }}</h4>
         <ul>
-          <li><a href="/services/#custom">Custom Websites</a></li>
-          <li><a href="/services/#shopify">Shopify Stores</a></li>
-          <li><a href="/services/#wordpress">WordPress Websites</a></li>
-          <li><a href="/services/#maintenance">Maintenance & Support</a></li>
+          <li><a href="/services/#custom">{{ content.footer_service_1|default:"Custom Websites" }}</a></li>
+          <li><a href="/services/#shopify">{{ content.footer_service_2|default:"Shopify Stores" }}</a></li>
+          <li><a href="/services/#wordpress">{{ content.footer_service_3|default:"WordPress Websites" }}</a></li>
+          <li><a href="/services/#maintenance">{{ content.footer_service_4|default:"Maintenance & Support" }}</a></li>
         </ul>
       </div>
 
       <!-- CTA -->
       <div class="footer-col footer-cta">
-        <h4>Start Your Project</h4>
+        <h4>{{ content.footer_cta_title|default:"Start Your Project" }}</h4>
 
         <div class="cta-group" style="justify-content:flex-start; margin-top:16px;">
-          <a href="/get-quote/" class="btn primary">Build My Website</a>
-          <a href="/contact/" class="btn secondary">Talk to Us</a>
+          <a href="/get-quote/" class="btn primary">
+            {{ content.footer_cta_primary|default:"Build My Website" }}
+          </a>
+          <a href="/contact/" class="btn secondary">
+            {{ content.footer_cta_secondary|default:"Talk to Us" }}
+          </a>
 
           <a href="mailto:weblyrotech@gmail.com" class="btn email-btn">
             <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
-            weblyrotech@gmail.com
+            {{ content.footer_email|default:"weblyrotech@gmail.com" }}
           </a>
         </div>
       </div>
@@ -123,7 +126,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Weblyro Tech. All rights reserved.</p>
+      <p>{{ content.footer_copyright|default:"© 2026 Weblyro Tech. All rights reserved." }}</p>
     </div>
 
   </div>
@@ -137,7 +140,7 @@
    class="whatsapp-float"
    target="_blank"
    rel="noopener">
-  WhatsApp
+  {{ content.whatsapp_label|default:"WhatsApp" }}
 </a>
 
 <!-- ===============================

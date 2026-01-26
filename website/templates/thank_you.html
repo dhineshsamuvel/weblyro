@@ -4,30 +4,37 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <section class="section center">
-  <h1>Thank You</h1>
+  <h1>{{ c.hero_title|default:"Thank You" }}</h1>
   <p class="section-subtitle">
-    Your request has been successfully submitted.
+    {{ c.hero_subtitle|default:"Your request has been successfully submitted." }}
   </p>
 </section>
 
 <section class="section center">
   <div class="card" style="max-width:600px; margin:0 auto;">
     <p>
-      Our team has received your information and will contact you shortly via
-      phone or email with the next steps.
+      {{ c.main_text|default:"Our team has received your information and will contact you shortly via phone or email with the next steps." }}
     </p>
 
     <p class="small-text">
-      If your request is urgent, you can also reach us directly via WhatsApp.
+      {{ c.secondary_text|default:"If your request is urgent, you can also reach us directly via WhatsApp." }}
     </p>
 
     <div class="cta" style="margin-top:20px;">
-      <a href="/" class="btn primary">Back to Home</a>
+      <a href="/" class="btn primary">
+        {{ c.cta_primary|default:"Back to Home" }}
+      </a>
       <a href="https://wa.me/918976008966?text=Hi%20Weblyro%20Tech%20I%20submitted%20a%20form"
-         class="btn secondary">WhatsApp Us</a>
+         class="btn secondary">
+        {{ c.cta_secondary|default:"WhatsApp Us" }}
+      </a>
     </div>
   </div>
 </section>
+
+{% endwith %}
 
 {% endblock %}

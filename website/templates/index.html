@@ -4,76 +4,80 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <!-- HERO -->
 <header class="hero hero-bg center">
   <h1>
-    High-performing websites<br>
-    built to grow your business
+    {{ c.hero_title|default:"High-performing websites<br>built to grow your business"|safe }}
   </h1>
 
   <p class="section-subtitle">
-    Shopify • WordPress • Custom Development • Ongoing Support
+    {{ c.hero_subtitle|default:"Shopify • WordPress • Custom Development • Ongoing Support" }}
   </p>
 
   <div class="cta">
-    <a href="/get-quote/" class="btn primary">Build My Website</a>
-    <a href="/contact/" class="btn secondary">Contact Us</a>
+    <a href="/get-quote/" class="btn primary">
+      {{ c.hero_cta_primary|default:"Build My Website" }}
+    </a>
+    <a href="/contact/" class="btn secondary">
+      {{ c.hero_cta_secondary|default:"Contact Us" }}
+    </a>
   </div>
 
   <p class="small-text" style="margin-top:16px;">
-    Trusted by startups & growing brands
+    {{ c.hero_trust|default:"Trusted by startups & growing brands" }}
   </p>
 </header>
 
 <!-- SERVICES -->
 <section class="section center">
-  <h2>What We Do</h2>
+  <h2>{{ c.services_title|default:"What We Do" }}</h2>
   <p class="section-subtitle">
-    We design and develop fast, scalable websites focused on performance,
-    user experience, and real business results.
+    {{ c.services_subtitle|default:"We design and develop fast, scalable websites focused on performance, user experience, and real business results." }}
   </p>
 
   <div class="grid services-grid">
 
     <a href="/services/website-design/" class="service-link">
       <div class="card">
-        <h3>Website Design & Development</h3>
-        <p>Custom-built websites engineered for speed, clarity, and conversions.</p>
+        <h3>{{ c.service_1_title|default:"Website Design & Development" }}</h3>
+        <p>{{ c.service_1_desc|default:"Custom-built websites engineered for speed, clarity, and conversions." }}</p>
       </div>
     </a>
 
     <a href="/services/shopify/" class="service-link">
       <div class="card">
-        <h3>Shopify Store Development</h3>
-        <p>High-converting ecommerce stores with clean UI and smooth checkout.</p>
+        <h3>{{ c.service_2_title|default:"Shopify Store Development" }}</h3>
+        <p>{{ c.service_2_desc|default:"High-converting ecommerce stores with clean UI and smooth checkout." }}</p>
       </div>
     </a>
 
     <a href="/services/wordpress/" class="service-link">
       <div class="card">
-        <h3>WordPress Websites</h3>
-        <p>Flexible, secure, and easy-to-manage WordPress solutions.</p>
+        <h3>{{ c.service_3_title|default:"WordPress Websites" }}</h3>
+        <p>{{ c.service_3_desc|default:"Flexible, secure, and easy-to-manage WordPress solutions." }}</p>
       </div>
     </a>
 
     <a href="/services/redesign/" class="service-link">
       <div class="card">
-        <h3>Website Redesign</h3>
-        <p>Modern redesigns that improve UX, speed, and engagement.</p>
+        <h3>{{ c.service_4_title|default:"Website Redesign" }}</h3>
+        <p>{{ c.service_4_desc|default:"Modern redesigns that improve UX, speed, and engagement." }}</p>
       </div>
     </a>
 
     <a href="/services/speed/" class="service-link">
       <div class="card">
-        <h3>Speed Optimization</h3>
-        <p>Core Web Vitals improvements and performance tuning.</p>
+        <h3>{{ c.service_5_title|default:"Speed Optimization" }}</h3>
+        <p>{{ c.service_5_desc|default:"Core Web Vitals improvements and performance tuning." }}</p>
       </div>
     </a>
 
     <a href="/services/maintenance/" class="service-link">
       <div class="card">
-        <h3>Maintenance & Support</h3>
-        <p>Ongoing updates, security checks, and technical support.</p>
+        <h3>{{ c.service_6_title|default:"Maintenance & Support" }}</h3>
+        <p>{{ c.service_6_desc|default:"Ongoing updates, security checks, and technical support." }}</p>
       </div>
     </a>
 
@@ -82,35 +86,42 @@
 
 <!-- WHY US -->
 <section class="section center">
-  <h2>Why Choose Weblyro Tech</h2>
+  <h2>{{ c.why_title|default:"Why Choose Weblyro Tech" }}</h2>
   <p class="section-subtitle">
-    We do not just build websites — we build reliable digital foundations
-    for long-term growth.
+    {{ c.why_subtitle|default:"We do not just build websites — we build reliable digital foundations for long-term growth." }}
   </p>
 
   <div class="grid">
-    <div class="card">Fast & reliable delivery</div>
-    <div class="card">Clean, scalable code</div>
-    <div class="card">Mobile-first design</div>
-    <div class="card">SEO-ready structure</div>
-    <div class="card">Long-term support</div>
-    <div class="card">Transparent pricing</div>
+    <div class="card">{{ c.why_point_1|default:"Fast & reliable delivery" }}</div>
+    <div class="card">{{ c.why_point_2|default:"Clean, scalable code" }}</div>
+    <div class="card">{{ c.why_point_3|default:"Mobile-first design" }}</div>
+    <div class="card">{{ c.why_point_4|default:"SEO-ready structure" }}</div>
+    <div class="card">{{ c.why_point_5|default:"Long-term support" }}</div>
+    <div class="card">{{ c.why_point_6|default:"Transparent pricing" }}</div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="section center">
-  <h2>Let’s Build Something That Works</h2>
+  <h2>{{ c.final_title|default:"Let’s Build Something That Works" }}</h2>
   <p class="section-subtitle">
-    Have a project in mind? Get a free consultation and a clear roadmap.
+    {{ c.final_subtitle|default:"Have a project in mind? Get a free consultation and a clear roadmap." }}
   </p>
 
   <div class="cta">
-    <a href="/get-quote/" class="btn primary">Build My Website</a>
-    <a href="/contact/" class="btn secondary">Contact Us</a>
+    <a href="/get-quote/" class="btn primary">
+      {{ c.final_cta_primary|default:"Build My Website" }}
+    </a>
+    <a href="/contact/" class="btn secondary">
+      {{ c.final_cta_secondary|default:"Contact Us" }}
+    </a>
     <a href="https://wa.me/918976008966?text=Hi%20Weblyro%20Tech%20I%20want%20a%20website"
-       class="btn secondary">WhatsApp Us</a>
+       class="btn secondary">
+       {{ c.final_cta_whatsapp|default:"WhatsApp Us" }}
+    </a>
   </div>
 </section>
+
+{% endwith %}
 
 {% endblock %}

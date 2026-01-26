@@ -4,83 +4,82 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <!-- HERO -->
 <section class="section center">
-  <h1>Website Design & Development</h1>
+  <h1>{{ c.hero_title|default:"Website Design & Development" }}</h1>
   <p class="section-subtitle">
-    High-performance business websites designed to attract visitors,
-    build trust, and convert leads into customers.
+    {{ c.hero_subtitle|default:"High-performance business websites designed to attract visitors, build trust, and convert leads into customers." }}
   </p>
-  <a href="/contact/" class="btn primary">Build My Website</a>
+  <a href="/contact/" class="btn primary">
+    {{ c.hero_cta|default:"Build My Website" }}
+  </a>
 </section>
 
 <!-- PROBLEMS -->
 <section class="section">
-  <h2>Common Problems Businesses Face</h2>
+  <h2>{{ c.problem_title|default:"Common Problems Businesses Face" }}</h2>
 
   <p class="small-text">
-    Many businesses struggle to attract and convert customers due to a weak or missing online presence.
-    Without a modern, high-performing website, credibility drops, engagement suffers,
-    and growth opportunities are lost.
+    {{ c.problem_description|default:"Many businesses struggle to attract and convert customers due to a weak or missing online presence. Without a modern, high-performing website, credibility drops, engagement suffers, and growth opportunities are lost." }}
   </p>
 
   <ul class="service-points">
-    <li>No website at all, making the business invisible online</li>
-    <li>Outdated designs that look unprofessional and harm trust</li>
-    <li>Slow loading speeds that frustrate visitors</li>
-    <li>Unclear messaging that fails to communicate value</li>
-    <li>Confusing navigation that blocks conversions</li>
-    <li>Poor mobile optimization leading to missed leads</li>
-    <li><strong>Result:</strong> low engagement, fewer inquiries, and lost revenue</li>
+    <li>{{ c.problem_point_1|default:"No website at all, making the business invisible online" }}</li>
+    <li>{{ c.problem_point_2|default:"Outdated designs that look unprofessional and harm trust" }}</li>
+    <li>{{ c.problem_point_3|default:"Slow loading speeds that frustrate visitors" }}</li>
+    <li>{{ c.problem_point_4|default:"Unclear messaging that fails to communicate value" }}</li>
+    <li>{{ c.problem_point_5|default:"Confusing navigation that blocks conversions" }}</li>
+    <li>{{ c.problem_point_6|default:"Poor mobile optimization leading to missed leads" }}</li>
+    <li>{{ c.problem_point_7|default:"Result: low engagement, fewer inquiries, and lost revenue" }}</li>
   </ul>
 </section>
 
 <!-- WHY IT MATTERS -->
 <section class="section">
-  <h2>Why a Professionally Built Website Matters</h2>
+  <h2>{{ c.why_title|default:"Why a Professionally Built Website Matters" }}</h2>
   <p class="small-text">
-    Your website is often the first impression customers have of your brand.
-    A professional design builds immediate trust, while clear messaging communicates
-    your value without confusion. With a well-structured layout and strategic
-    calls-to-action, visitors are guided naturally toward inquiries, sign-ups,
-    and purchases—resulting in higher engagement, stronger conversions,
-    and long-term brand authority.
+    {{ c.why_description|default:"Your website is often the first impression customers have of your brand. A professional design builds immediate trust, while clear messaging communicates your value without confusion. With a well-structured layout and strategic calls-to-action, visitors are guided naturally toward inquiries, sign-ups, and purchases—resulting in higher engagement, stronger conversions, and long-term brand authority." }}
   </p>
 </section>
 
 <!-- WHAT YOU GET -->
 <section class="section">
-  <h2>What You Get</h2>
+  <h2>{{ c.get_title|default:"What You Get" }}</h2>
   <ul class="service-points">
-    <li>Custom website design aligned with your brand identity</li>
-    <li>Fully responsive layout for mobile, tablet, and desktop</li>
-    <li>Fast-loading, performance-optimized pages</li>
-    <li>SEO-friendly structure for better search visibility</li>
-    <li>Clear calls-to-action and lead capture forms</li>
-    <li>Secure, scalable, and maintainable codebase</li>
+    <li>{{ c.get_point_1|default:"Custom website design aligned with your brand identity" }}</li>
+    <li>{{ c.get_point_2|default:"Fully responsive layout for mobile, tablet, and desktop" }}</li>
+    <li>{{ c.get_point_3|default:"Fast-loading, performance-optimized pages" }}</li>
+    <li>{{ c.get_point_4|default:"SEO-friendly structure for better search visibility" }}</li>
+    <li>{{ c.get_point_5|default:"Clear calls-to-action and lead capture forms" }}</li>
+    <li>{{ c.get_point_6|default:"Secure, scalable, and maintainable codebase" }}</li>
   </ul>
 </section>
 
 <!-- WHO IT'S FOR -->
 <section class="section">
-  <h2>Who This Service Is For</h2>
+  <h2>{{ c.who_title|default:"Who This Service Is For" }}</h2>
   <ul class="service-points">
-    <li>Startups that need a strong, credible online presence from day one</li>
-    <li>Small businesses looking to attract more customers and generate consistent leads</li>
-    <li>Growing companies ready to scale with a high-performing website</li>
-    <li>Businesses replacing outdated or ineffective websites</li>
-    <li>Brands seeking a modern, professional digital platform built for growth</li>
+    <li>{{ c.who_point_1|default:"Startups that need a strong, credible online presence from day one" }}</li>
+    <li>{{ c.who_point_2|default:"Small businesses looking to attract more customers and generate consistent leads" }}</li>
+    <li>{{ c.who_point_3|default:"Growing companies ready to scale with a high-performing website" }}</li>
+    <li>{{ c.who_point_4|default:"Businesses replacing outdated or ineffective websites" }}</li>
+    <li>{{ c.who_point_5|default:"Brands seeking a modern, professional digital platform built for growth" }}</li>
   </ul>
 </section>
 
 <!-- FINAL CTA -->
 <section class="section center">
-  <h2>Build a Website That Works for Your Business</h2>
+  <h2>{{ c.final_title|default:"Build a Website That Works for Your Business" }}</h2>
   <p class="section-subtitle">
-    We don’t just design websites — we build reliable digital platforms
-    that support long-term business growth.
+    {{ c.final_subtitle|default:"We don’t just design websites — we build reliable digital platforms that support long-term business growth." }}
   </p>
-  <a href="/contact/" class="btn primary">Build My Website</a>
+  <a href="/contact/" class="btn primary">
+    {{ c.final_cta|default:"Build My Website" }}
+  </a>
 </section>
+
+{% endwith %}
 
 {% endblock %}

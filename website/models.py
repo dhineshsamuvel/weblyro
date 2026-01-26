@@ -48,3 +48,16 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class CMSContent(models.Model):
+    page = models.CharField(max_length=50)
+    key = models.CharField(max_length=100)
+    value = models.TextField()
+
+    class Meta:
+        unique_together = ("page", "key")
+        ordering = ("page", "key")
+
+    def __str__(self):
+        return f"{self.page} :: {self.key}"

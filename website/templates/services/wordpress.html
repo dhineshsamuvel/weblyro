@@ -4,81 +4,82 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <!-- HERO -->
 <section class="section center">
-  <h1>WordPress Website Development</h1>
+  <h1>{{ c.hero_title|default:"WordPress Website Development" }}</h1>
   <p class="section-subtitle">
-    Flexible, easy-to-manage WordPress websites built for performance,
-    security, and long-term business growth.
+    {{ c.hero_subtitle|default:"Flexible, easy-to-manage WordPress websites built for performance, security, and long-term business growth." }}
   </p>
-  <a href="/contact/" class="btn primary">Get My Website</a>
+  <a href="/contact/" class="btn primary">
+    {{ c.hero_cta|default:"Get My Website" }}
+  </a>
 </section>
 
 <!-- PROBLEMS -->
 <section class="section">
-  <h2>Common Challenges with WordPress Websites</h2>
+  <h2>{{ c.problem_title|default:"Common Challenges with WordPress Websites" }}</h2>
 
   <p class="small-text">
-    Many WordPress websites struggle with performance, security, and usability
-    issues caused by poor setup and over-reliance on plugins. Without proper
-    development, websites become slow, hard to manage, and costly to maintain.
+    {{ c.problem_description|default:"Many WordPress websites struggle with performance, security, and usability issues caused by poor setup and over-reliance on plugins. Without proper development, websites become slow, hard to manage, and costly to maintain." }}
   </p>
 
   <ul class="service-points">
-    <li>Slow loading times due to bloated themes and plugins</li>
-    <li>Security risks from outdated or poorly configured plugins</li>
-    <li>Cluttered admin dashboards that are hard to manage</li>
-    <li>Unoptimized structure affecting SEO and visibility</li>
-    <li>Frequent maintenance issues and unexpected errors</li>
-    <li>Poor scalability as business requirements grow</li>
-    <li><strong>Result:</strong> poor user experience and lost opportunities</li>
+    <li>{{ c.problem_point_1|default:"Slow loading times due to bloated themes and plugins" }}</li>
+    <li>{{ c.problem_point_2|default:"Security risks from outdated or poorly configured plugins" }}</li>
+    <li>{{ c.problem_point_3|default:"Cluttered admin dashboards that are hard to manage" }}</li>
+    <li>{{ c.problem_point_4|default:"Unoptimized structure affecting SEO and visibility" }}</li>
+    <li>{{ c.problem_point_5|default:"Frequent maintenance issues and unexpected errors" }}</li>
+    <li>{{ c.problem_point_6|default:"Poor scalability as business requirements grow" }}</li>
+    <li>{{ c.problem_point_7|default:"Result: poor user experience and lost opportunities" }}</li>
   </ul>
 </section>
 
 <!-- WHY IT MATTERS -->
 <section class="section">
-  <h2>Why Professional WordPress Development Matters</h2>
+  <h2>{{ c.why_title|default:"Why Professional WordPress Development Matters" }}</h2>
   <p class="small-text">
-    WordPress is a powerful platform, but only when built correctly.
-    Professional development ensures clean code, strong security,
-    fast performance, and a simplified admin experience—allowing
-    you to manage content confidently without technical complexity.
+    {{ c.why_description|default:"WordPress is a powerful platform, but only when built correctly. Professional development ensures clean code, strong security, fast performance, and a simplified admin experience—allowing you to manage content confidently without technical complexity." }}
   </p>
 </section>
 
 <!-- WHAT WE DELIVER -->
 <section class="section">
-  <h2>What We Deliver</h2>
+  <h2>{{ c.deliver_title|default:"What We Deliver" }}</h2>
   <ul class="service-points">
-    <li>Custom WordPress theme aligned with your brand identity</li>
-    <li>Clean, secure, and optimized WordPress setup</li>
-    <li>SEO-ready structure with proper metadata configuration</li>
-    <li>Performance optimization for faster load times</li>
-    <li>User-friendly admin dashboard for easy content updates</li>
-    <li>Scalable architecture for future features and growth</li>
+    <li>{{ c.deliver_point_1|default:"Custom WordPress theme aligned with your brand identity" }}</li>
+    <li>{{ c.deliver_point_2|default:"Clean, secure, and optimized WordPress setup" }}</li>
+    <li>{{ c.deliver_point_3|default:"SEO-ready structure with proper metadata configuration" }}</li>
+    <li>{{ c.deliver_point_4|default:"Performance optimization for faster load times" }}</li>
+    <li>{{ c.deliver_point_5|default:"User-friendly admin dashboard for easy content updates" }}</li>
+    <li>{{ c.deliver_point_6|default:"Scalable architecture for future features and growth" }}</li>
   </ul>
 </section>
 
 <!-- WHO IT'S FOR -->
 <section class="section">
-  <h2>Who This Service Is For</h2>
+  <h2>{{ c.who_title|default:"Who This Service Is For" }}</h2>
   <ul class="service-points">
-    <li>Business and corporate websites</li>
-    <li>Service providers and consultants</li>
-    <li>Blogs, content creators, and publishers</li>
-    <li>Companies migrating from static or outdated platforms</li>
-    <li>Businesses needing full content control without technical hassle</li>
+    <li>{{ c.who_point_1|default:"Business and corporate websites" }}</li>
+    <li>{{ c.who_point_2|default:"Service providers and consultants" }}</li>
+    <li>{{ c.who_point_3|default:"Blogs, content creators, and publishers" }}</li>
+    <li>{{ c.who_point_4|default:"Companies migrating from static or outdated platforms" }}</li>
+    <li>{{ c.who_point_5|default:"Businesses needing full content control without technical hassle" }}</li>
   </ul>
 </section>
 
 <!-- FINAL CTA -->
 <section class="section center">
-  <h2>Build a WordPress Website You Can Manage</h2>
+  <h2>{{ c.final_title|default:"Build a WordPress Website You Can Manage" }}</h2>
   <p class="section-subtitle">
-    We create WordPress websites that are easy to update,
-    secure to operate, and built to grow with your business.
+    {{ c.final_subtitle|default:"We create WordPress websites that are easy to update, secure to operate, and built to grow with your business." }}
   </p>
-  <a href="/contact/" class="btn primary">Get My Website</a>
+  <a href="/contact/" class="btn primary">
+    {{ c.final_cta|default:"Get My Website" }}
+  </a>
 </section>
+
+{% endwith %}
 
 {% endblock %}

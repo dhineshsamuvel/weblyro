@@ -4,11 +4,12 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <section class="section center">
-  <h1>About Weblyro Tech</h1>
+  <h1>{{ c.hero_title|default:"About Weblyro Tech" }}</h1>
   <p class="section-subtitle">
-    We are a modern web development agency focused on building fast, reliable,
-    and scalable digital products for growing businesses.
+    {{ c.hero_subtitle|default:"We are a modern web development agency focused on building fast, reliable, and scalable digital products for growing businesses." }}
   </p>
 </section>
 
@@ -16,27 +17,23 @@
   <div class="grid">
 
     <div class="card">
-      <h3>Our Mission</h3>
+      <h3>{{ c.mission_title|default:"Our Mission" }}</h3>
       <p>
-        Our mission is to help brands build a strong online presence through
-        clean design, modern technology, and performance-driven development.
+        {{ c.mission_text|default:"Our mission is to help brands build a strong online presence through clean design, modern technology, and performance-driven development." }}
       </p>
     </div>
 
     <div class="card">
-      <h3>How We Work</h3>
+      <h3>{{ c.process_title|default:"How We Work" }}</h3>
       <p>
-        We follow a clear and transparent process—understanding business goals,
-        designing with purpose, and delivering websites that are fast,
-        responsive, and SEO-ready.
+        {{ c.process_text|default:"We follow a clear and transparent process—understanding business goals, designing with purpose, and delivering websites that are fast, responsive, and SEO-ready." }}
       </p>
     </div>
 
     <div class="card">
-      <h3>What Makes Us Different</h3>
+      <h3>{{ c.difference_title|default:"What Makes Us Different" }}</h3>
       <p>
-        We focus on quality, not quantity. Every website we build is mobile-first,
-        performance-optimized, and designed to scale as your business grows.
+        {{ c.difference_text|default:"We focus on quality, not quantity. Every website we build is mobile-first, performance-optimized, and designed to scale as your business grows." }}
       </p>
     </div>
 
@@ -44,17 +41,17 @@
 </section>
 
 <section class="section center">
-  <h2>Our Team</h2>
+  <h2>{{ c.team_title|default:"Our Team" }}</h2>
   <p class="section-subtitle">
-    A focused team committed to building reliable, high-quality digital experiences.
+    {{ c.team_subtitle|default:"A focused team committed to building reliable, high-quality digital experiences." }}
   </p>
 
   <div class="grid founders-grid">
 
     <!-- FOUNDER -->
     <div class="card founder-card">
-      <h3>Dhinesh</h3>
-      <p>Founder</p>
+      <h3>{{ c.member_1_name|default:"Dhinesh" }}</h3>
+      <p>{{ c.member_1_role|default:"Founder" }}</p>
       <a href="https://www.instagram.com/dhineshsamuvel_"
          target="_blank"
          rel="noopener"
@@ -66,8 +63,8 @@
 
     <!-- CO-FOUNDER -->
     <div class="card founder-card">
-      <h3>Selva</h3>
-      <p>Co-Founder</p>
+      <h3>{{ c.member_2_name|default:"Selva" }}</h3>
+      <p>{{ c.member_2_role|default:"Co-Founder" }}</p>
       <a href="https://www.instagram.com/dselva_"
          target="_blank"
          rel="noopener"
@@ -79,8 +76,8 @@
 
     <!-- TEAM MEMBER -->
     <div class="card founder-card">
-      <h3>Sarathi</h3>
-      <p>Team Member</p>
+      <h3>{{ c.member_3_name|default:"Sarathi" }}</h3>
+      <p>{{ c.member_3_role|default:"Team Member" }}</p>
       <a href="https://www.instagram.com/__sarathii__"
          target="_blank"
          rel="noopener"
@@ -92,8 +89,8 @@
 
     <!-- TEAM MEMBER -->
     <div class="card founder-card">
-      <h3>Krishna</h3>
-      <p>Team Member</p>
+      <h3>{{ c.member_4_name|default:"Krishna" }}</h3>
+      <p>{{ c.member_4_role|default:"Team Member" }}</p>
       <a href="https://www.instagram.com/krishna.lifts_07"
          target="_blank"
          rel="noopener"
@@ -107,14 +104,17 @@
 </section>
 
 <section class="section center">
-  <h2>Let’s Build Something Together</h2>
+  <h2>{{ c.final_title|default:"Let’s Build Something Together" }}</h2>
   <p class="section-subtitle">
-    Whether you are launching a new business or upgrading an existing website,
-    our team is ready to help you move forward with confidence.
+    {{ c.final_subtitle|default:"Whether you are launching a new business or upgrading an existing website, our team is ready to help you move forward with confidence." }}
   </p>
   <div class="cta">
-    <a href="/contact/" class="btn primary">Contact Our Team</a>
+    <a href="/contact/" class="btn primary">
+      {{ c.final_cta|default:"Contact Our Team" }}
+    </a>
   </div>
 </section>
+
+{% endwith %}
 
 {% endblock %}

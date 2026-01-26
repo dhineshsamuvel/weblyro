@@ -4,68 +4,71 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <!-- HERO -->
 <section class="section center">
-  <h1>Website Maintenance & Support</h1>
+  <h1>{{ c.hero_title|default:"Website Maintenance & Support" }}</h1>
   <p class="section-subtitle">
-    Keep your website secure, fast, and reliable—without worrying about
-    updates, technical issues, or unexpected downtime.
+    {{ c.hero_subtitle|default:"Keep your website secure, fast, and reliable—without worrying about updates, technical issues, or unexpected downtime." }}
   </p>
-  <a href="/contact/" class="btn primary">Subscribe Now</a>
+  <a href="/contact/" class="btn primary">
+    {{ c.hero_cta|default:"Subscribe Now" }}
+  </a>
 </section>
 
 <!-- WHY MAINTENANCE -->
 <section class="section">
-  <h2>Why Website Maintenance Matters</h2>
+  <h2>{{ c.why_title|default:"Why Website Maintenance Matters" }}</h2>
 
   <p class="small-text">
-    A website is not a one-time project. Over time, outdated software,
-    security vulnerabilities, broken functionality, and performance issues
-    can negatively impact user experience, search rankings, and customer trust.
-    Regular maintenance ensures your website continues to perform reliably.
+    {{ c.why_description|default:"A website is not a one-time project. Over time, outdated software, security vulnerabilities, broken functionality, and performance issues can negatively impact user experience, search rankings, and customer trust. Regular maintenance ensures your website continues to perform reliably." }}
   </p>
 
   <ul class="service-points">
-    <li>Outdated plugins and software create security risks</li>
-    <li>Broken links and features harm user experience</li>
-    <li>Performance degradation affects conversions</li>
-    <li>Downtime leads to lost traffic and revenue</li>
-    <li>Lack of monitoring increases long-term costs</li>
+    <li>{{ c.why_point_1|default:"Outdated plugins and software create security risks" }}</li>
+    <li>{{ c.why_point_2|default:"Broken links and features harm user experience" }}</li>
+    <li>{{ c.why_point_3|default:"Performance degradation affects conversions" }}</li>
+    <li>{{ c.why_point_4|default:"Downtime leads to lost traffic and revenue" }}</li>
+    <li>{{ c.why_point_5|default:"Lack of monitoring increases long-term costs" }}</li>
   </ul>
 </section>
 
 <!-- WHAT WE DO -->
 <section class="section">
-  <h2>What We Do</h2>
+  <h2>{{ c.what_title|default:"What We Do" }}</h2>
   <ul class="service-points">
-    <li>Regular updates for core systems, themes, and plugins</li>
-    <li>Security monitoring and malware protection</li>
-    <li>Automated and manual backups for data safety</li>
-    <li>Performance checks to maintain fast load times</li>
-    <li>Bug fixes and technical issue resolution</li>
-    <li>Uptime monitoring to minimize downtime</li>
+    <li>{{ c.what_point_1|default:"Regular updates for core systems, themes, and plugins" }}</li>
+    <li>{{ c.what_point_2|default:"Security monitoring and malware protection" }}</li>
+    <li>{{ c.what_point_3|default:"Automated and manual backups for data safety" }}</li>
+    <li>{{ c.what_point_4|default:"Performance checks to maintain fast load times" }}</li>
+    <li>{{ c.what_point_5|default:"Bug fixes and technical issue resolution" }}</li>
+    <li>{{ c.what_point_6|default:"Uptime monitoring to minimize downtime" }}</li>
   </ul>
 </section>
 
 <!-- WHO IT'S FOR -->
 <section class="section">
-  <h2>Who This Service Is For</h2>
+  <h2>{{ c.who_title|default:"Who This Service Is For" }}</h2>
   <ul class="service-points">
-    <li>Business owners who want worry-free website management</li>
-    <li>Startups without an in-house technical team</li>
-    <li>eCommerce stores requiring continuous uptime</li>
-    <li>Companies focused on growth rather than maintenance tasks</li>
+    <li>{{ c.who_point_1|default:"Business owners who want worry-free website management" }}</li>
+    <li>{{ c.who_point_2|default:"Startups without an in-house technical team" }}</li>
+    <li>{{ c.who_point_3|default:"eCommerce stores requiring continuous uptime" }}</li>
+    <li>{{ c.who_point_4|default:"Companies focused on growth rather than maintenance tasks" }}</li>
   </ul>
 </section>
 
 <!-- FINAL CTA -->
 <section class="section center">
-  <h2>Let Us Handle the Technical Work</h2>
+  <h2>{{ c.final_title|default:"Let Us Handle the Technical Work" }}</h2>
   <p class="section-subtitle">
-    Focus on growing your business while we keep your website secure,
-    updated, and running smoothly.
+    {{ c.final_subtitle|default:"Focus on growing your business while we keep your website secure, updated, and running smoothly." }}
   </p>
-  <a href="/contact/" class="btn primary">Subscribe Now</a>
+  <a href="/contact/" class="btn primary">
+    {{ c.final_cta|default:"Subscribe Now" }}
+  </a>
 </section>
+
+{% endwith %}
 
 {% endblock %}

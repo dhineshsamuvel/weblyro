@@ -4,82 +4,82 @@
 
 {% block content %}
 
+{% with c=content %}
+
 <!-- HERO -->
 <section class="section center">
-  <h1>Website Speed Optimization</h1>
+  <h1>{{ c.hero_title|default:"Website Speed Optimization" }}</h1>
   <p class="section-subtitle">
-    Improve loading speed, user experience, and search visibility
-    with professional performance optimization.
+    {{ c.hero_subtitle|default:"Improve loading speed, user experience, and search visibility with professional performance optimization." }}
   </p>
-  <a href="/contact/" class="btn primary">Optimize My Website</a>
+  <a href="/contact/" class="btn primary">
+    {{ c.hero_cta|default:"Optimize My Website" }}
+  </a>
 </section>
 
 <!-- PROBLEMS -->
 <section class="section">
-  <h2>Common Performance Problems</h2>
+  <h2>{{ c.problem_title|default:"Common Performance Problems" }}</h2>
 
   <p class="small-text">
-    Slow websites frustrate users and directly impact conversions.
-    Many sites suffer from poor optimization, inefficient code,
-    and server-related issues—leading to high bounce rates and
-    lost business opportunities.
+    {{ c.problem_description|default:"Slow websites frustrate users and directly impact conversions. Many sites suffer from poor optimization, inefficient code, and server-related issues—leading to high bounce rates and lost business opportunities." }}
   </p>
 
   <ul class="service-points">
-    <li>Unoptimized images and heavy media files</li>
-    <li>Excessive JavaScript and CSS blocking page load</li>
-    <li>Poor server response time and caching setup</li>
-    <li>Bloated themes or unnecessary plugins</li>
-    <li>Slow mobile performance</li>
-    <li>Third-party scripts affecting load speed</li>
-    <li><strong>Result:</strong> poor user experience, low conversions, and SEO decline</li>
+    <li>{{ c.problem_point_1|default:"Unoptimized images and heavy media files" }}</li>
+    <li>{{ c.problem_point_2|default:"Excessive JavaScript and CSS blocking page load" }}</li>
+    <li>{{ c.problem_point_3|default:"Poor server response time and caching setup" }}</li>
+    <li>{{ c.problem_point_4|default:"Bloated themes or unnecessary plugins" }}</li>
+    <li>{{ c.problem_point_5|default:"Slow mobile performance" }}</li>
+    <li>{{ c.problem_point_6|default:"Third-party scripts affecting load speed" }}</li>
+    <li>{{ c.problem_point_7|default:"Result: poor user experience, low conversions, and SEO decline" }}</li>
   </ul>
 </section>
 
 <!-- WHY IT MATTERS -->
 <section class="section">
-  <h2>Why Website Speed Matters</h2>
+  <h2>{{ c.why_title|default:"Why Website Speed Matters" }}</h2>
   <p class="small-text">
-    Website speed is a critical ranking factor and a key driver of
-    user trust. Faster websites keep visitors engaged longer,
-    reduce bounce rates, and significantly improve conversion
-    performance across both desktop and mobile devices.
+    {{ c.why_description|default:"Website speed is a critical ranking factor and a key driver of user trust. Faster websites keep visitors engaged longer, reduce bounce rates, and significantly improve conversion performance across both desktop and mobile devices." }}
   </p>
 </section>
 
 <!-- WHAT WE OPTIMIZE -->
 <section class="section">
-  <h2>What We Optimize</h2>
+  <h2>{{ c.optimize_title|default:"What We Optimize" }}</h2>
   <ul class="service-points">
-    <li>Core Web Vitals (LCP, CLS, INP)</li>
-    <li>Image compression and asset optimization</li>
-    <li>JavaScript and CSS minification and deferment</li>
-    <li>Server response, caching, and CDN configuration</li>
-    <li>Mobile performance and responsiveness</li>
-    <li>Third-party script cleanup and optimization</li>
+    <li>{{ c.optimize_point_1|default:"Core Web Vitals (LCP, CLS, INP)" }}</li>
+    <li>{{ c.optimize_point_2|default:"Image compression and asset optimization" }}</li>
+    <li>{{ c.optimize_point_3|default:"JavaScript and CSS minification and deferment" }}</li>
+    <li>{{ c.optimize_point_4|default:"Server response, caching, and CDN configuration" }}</li>
+    <li>{{ c.optimize_point_5|default:"Mobile performance and responsiveness" }}</li>
+    <li>{{ c.optimize_point_6|default:"Third-party script cleanup and optimization" }}</li>
   </ul>
 </section>
 
 <!-- WHO IT'S FOR -->
 <section class="section">
-  <h2>Who This Service Is For</h2>
+  <h2>{{ c.who_title|default:"Who This Service Is For" }}</h2>
   <ul class="service-points">
-    <li>Business websites struggling with slow load times</li>
-    <li>eCommerce stores experiencing cart abandonment</li>
-    <li>Content-heavy platforms with performance issues</li>
-    <li>Websites affected by declining SEO rankings</li>
-    <li>Mobile-first audiences requiring faster experiences</li>
+    <li>{{ c.who_point_1|default:"Business websites struggling with slow load times" }}</li>
+    <li>{{ c.who_point_2|default:"eCommerce stores experiencing cart abandonment" }}</li>
+    <li>{{ c.who_point_3|default:"Content-heavy platforms with performance issues" }}</li>
+    <li>{{ c.who_point_4|default:"Websites affected by declining SEO rankings" }}</li>
+    <li>{{ c.who_point_5|default:"Mobile-first audiences requiring faster experiences" }}</li>
   </ul>
 </section>
 
 <!-- FINAL CTA -->
 <section class="section center">
-  <h2>Speed Up Your Website Today</h2>
+  <h2>{{ c.final_title|default:"Speed Up Your Website Today" }}</h2>
   <p class="section-subtitle">
-    We focus on real-world performance improvements—not just
-    speed scores—so your website loads fast and performs reliably.
+    {{ c.final_subtitle|default:"We focus on real-world performance improvements—not just speed scores—so your website loads fast and performs reliably." }}
   </p>
-  <a href="/contact/" class="btn primary">Optimize My Website</a>
+  <a href="/contact/" class="btn primary">
+    {{ c.final_cta|default:"Optimize My Website" }}
+  </a>
 </section>
+
+{% endwith %}
 
 {% endblock %}
