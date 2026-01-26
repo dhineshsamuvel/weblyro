@@ -4,6 +4,7 @@
 # Django cache
 tmp/
 *.djcache
+tmp/django_cache/
 
 
 # Python

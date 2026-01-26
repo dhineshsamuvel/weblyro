@@ -3,10 +3,11 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from website import views
+from website.views import health
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path("health/", health),
     path('', views.home, name="home"),
     path('services/', views.services, name="services"),
     path('portfolio/', views.portfolio, name="portfolio"),

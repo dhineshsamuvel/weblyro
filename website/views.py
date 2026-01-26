@@ -6,7 +6,10 @@ from .models import Lead, Project  # Import Lead and Project models
 import requests
 from django.contrib import messages  # To show flash messages
 from django.views.decorators.cache import cache_page  # Import cache_page decorator
+from django.http import HttpResponse
 
+def health(request):
+    return HttpResponse("OK", status=200)
 # -------------------------
 # reCAPTCHA verification
 # -------------------------
